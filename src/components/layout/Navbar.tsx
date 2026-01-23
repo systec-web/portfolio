@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { NoiseBackground } from "@/components/ui/noise-background";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,7 +22,6 @@ export const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Team', href: '#team' },
     { name: 'Process', href: '#process' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   const scrollToHash = (href: string) => {
@@ -68,9 +68,18 @@ export const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="cta" className="rounded-full px-6">
-            Get Started
-          </Button>
+          <NoiseBackground
+            containerClassName="w-fit p-2 rounded-full mx-auto"
+            gradientColors={[
+              "rgb(255, 100, 150)",
+              "rgb(100, 150, 255)",
+              "rgb(255, 200, 100)",
+            ]}
+          >
+            <button className="h-full w-full cursor-pointer rounded-full bg-linear-to-r from-neutral-100 via-neutral-100 to-white px-4 py-2 text-black shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)] transition-all duration-100 active:scale-98 dark:from-black dark:via-black dark:to-neutral-900 dark:text-white dark:shadow-[0px_1px_0px_0px_var(--color-neutral-950)_inset,0px_1px_0px_0px_var(--color-neutral-800)]">
+              Get Started &rarr;
+            </button>
+          </NoiseBackground>  
         </div>
 
         {/* Mobile Toggle */}
@@ -102,7 +111,18 @@ export const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="cta" className="w-full rounded-full">Get Started</Button>
+            <NoiseBackground
+              containerClassName="w-full p-2 rounded-full"
+              gradientColors={[
+                "rgb(255, 100, 150)",
+                "rgb(100, 150, 255)",
+                "rgb(255, 200, 100)",
+              ]}
+            >
+              <button className="h-full w-full cursor-pointer rounded-full bg-linear-to-r from-neutral-100 via-neutral-100 to-white px-4 py-2 text-black shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)] transition-all duration-100 active:scale-98 dark:from-black dark:via-black dark:to-neutral-900 dark:text-white dark:shadow-[0px_1px_0px_0px_var(--color-neutral-950)_inset,0px_1px_0px_0px_var(--color-neutral-800)]">
+                Get Started &rarr;
+              </button>
+            </NoiseBackground>
           </div>
         </div>
       )}
