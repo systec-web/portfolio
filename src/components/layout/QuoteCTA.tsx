@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Contact from './Contact';
 
@@ -16,6 +16,7 @@ export const QuoteCTA = () => {
          <h3 className="text-3xl md:text-5xl font-serif font-bold mb-6 tracking-tight">
               Ready to <span className="text-primary">Illuminate</span> Your Business?
             </h3>
+            
             <p className="text-lg text-slate-700 mb-8 leading-relaxed">
               Let's build something exceptional together. Our team is ready to provide 
               a free consultation and a transparent quote customized to your vision.
@@ -23,13 +24,11 @@ export const QuoteCTA = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button onClick={() => setOpen(true)} size="lg" className="rounded-full h-14 px-8 text-lg font-semibold bg-primary text-white">
-                Request Free Quote
+                Book Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
 
-              <a href="mailto:hello@brighterlaunchpad.com" className="font-bold hover:text-primary">
-                Or send us an email
-              </a>
+           
             </div>
           </div>
 
@@ -43,9 +42,10 @@ export const QuoteCTA = () => {
                 className="mt-6 w-full"
               >
                 <div className="mx-auto max-w-3xl">
-                  <Contact />
+                 
+                  <Contact onClose={() => setOpen(false)} />
                   <div className="flex justify-end mt-2">
-                    <button onClick={() => setOpen(false)} className="text-sm text-muted-foreground hover:text-primary">Close</button>
+                   
                   </div>
                 </div>
               </motion.div>
