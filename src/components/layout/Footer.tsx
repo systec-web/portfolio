@@ -110,7 +110,7 @@ export const Footer = () => {
           <ul className="space-y-4 text-sm text-muted-foreground">
             <li className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-primary" />
-              hello@brighterlaunchpad.com
+              systecweblive@gmail.com
             </li>
             <li className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-primary" />
@@ -119,7 +119,7 @@ export const Footer = () => {
             </li>
             <li className="flex items-center gap-3">
               <MapPin className="w-4 h-4 text-primary" />
-              123 Innovation Drive, Tech City
+              Online Market-Place
             </li>
           </ul>
         </div>
