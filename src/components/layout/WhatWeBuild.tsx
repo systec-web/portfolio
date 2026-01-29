@@ -55,16 +55,30 @@ export const WhatWeBuild = () => {
   return (
     <section
       id="services"
-      className="py-24 px-6 relative overflow-hidden bg-secondary/30 bg-fixed bg-no-repeat"
-      style={{
-        backgroundImage: "url('https://coolbackgrounds.imgix.net/3ePclU2S6e80DYWpCUdmPV/194ca1fcd9f49a833e906d7adb743078/white-unsplash.jpg?w=3840&q=60&auto=format,compress')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="py-24 px-6 relative overflow-hidden"
     >
-      {/* Soft white overlay to keep content readable (low opacity) */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+      {/* Background images with proper layering */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+        {/* Light mode background */}
+        <div 
+          className="absolute inset-0 dark:opacity-0 transition-opacity duration-300"
+          style={{
+            backgroundImage: "url('https://coolbackgrounds.imgix.net/3ePclU2S6e80DYWpCUdmPV/194ca1fcd9f49a833e906d7adb743078/white-unsplash.jpg?w=3840&q=60&auto=format,compress')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        {/* Dark mode background */}
+        <div 
+          className="absolute inset-0 opacity-0 dark:opacity-100 transition-opacity duration-300"
+          style={{
+            backgroundImage: "url('https://img.pikbest.com/wp/202344/sleek-and-contemporary-abstract-texture-of-dark-fabric_9933411.jpg!w700wp')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-white/10 dark:bg-black/40 backdrop-blur-sm" />
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -74,7 +88,7 @@ export const WhatWeBuild = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-serif font-bold mb-6"
           >
-            Versatility in <span className="text-primary">Every Pixel</span>
+            Versatility in <span className="text-primary dark:text-slate-100">Every Pixel</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

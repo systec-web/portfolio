@@ -57,11 +57,11 @@ export const Pricing = () => {
   return (
     <section id="pricing" className="py-24 px-6 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
-          <Badge variant="outline" className="mb-4 px-4 py-1 rounded-full border-primary/20 text-primary">
+          <Badge variant="outline" className="mb-4 px-4 py-1 rounded-full border-primary/20 text-primary dark:text-slate-100 dark:border-slate-600">
             Transparent Pricing
           </Badge>
           <motion.h2
@@ -70,7 +70,7 @@ export const Pricing = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-serif font-bold mb-6"
           >
-            Invest in Your <span className="text-primary">Digital Future</span>
+            Invest in Your <span className="text-primary dark:text-slate-100">Digital Future</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export const Pricing = () => {
                 'relative p-10 rounded-[2.5rem] border transition-all duration-500',
                 plan.highlight 
                   ? 'bg-primary text-primary-foreground shadow-2xl shadow-primary/20 scale-105 z-10' 
-                  : 'bg-background/50 backdrop-blur-sm hover:border-primary/30'
+                  : 'bg-background/50 dark:bg-slate-800/50 backdrop-blur-sm hover:border-primary/30'
               )}
             >
               {plan.highlight && (
@@ -109,7 +109,7 @@ export const Pricing = () => {
               )}
               
               <div className="mb-10">
-                <p className={cn('text-sm font-bold uppercase tracking-widest mb-2', plan.highlight ? 'text-primary-foreground/70' : 'text-primary')}>
+                <p className={cn('text-sm font-bold uppercase tracking-widest mb-2', plan.highlight ? 'text-primary-foreground/70' : 'text-primary dark:text-slate-100')}>
                   {plan.name}
                 </p>
                 <h3 className="text-4xl font-serif font-bold mb-4">

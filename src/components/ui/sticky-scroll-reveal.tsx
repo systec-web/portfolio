@@ -40,9 +40,9 @@ export const StickyScroll = ({
 
   // Lighter theme for the sticky card and soft gradients
   const backgroundColors = [
-    "#ffffff", // white
-    "#f8fafc", // slate-50
-    "#f1f5f9", // slate-100
+    "var(--background)", // use CSS variable
+    "var(--background)",
+    "var(--background)",
   ];
   const linearGradients = [
     "linear-gradient(to bottom right, rgba(14,165,233,0.12), rgba(16,185,129,0.12))",
@@ -63,7 +63,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-6 snap-y snap-mandatory bg-white shadow-sm"
+      className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-6 snap-y snap-mandatory bg-white dark:bg-slate-900 shadow-sm"
       ref={ref}
     >
       <div className="relative flex items-start px-4">
@@ -74,14 +74,14 @@ export const StickyScroll = ({
                 <motion.h2
                   initial={{ opacity: 0 }}
                   animate={{ opacity: activeCard === index ? 1 : 0.35 }}
-                  className="text-2xl font-bold text-slate-900"
+                  className="text-2xl font-bold text-slate-900 dark:text-slate-100"
                 >
                   {item.title}
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: activeCard === index ? 1 : 0.45 }}
-                  className="text-md mt-6 max-w-sm text-slate-600"
+                  className="text-md mt-6 max-w-sm text-slate-600 dark:text-slate-300"
                 >
                   {item.description}
                 </motion.p>
@@ -95,7 +95,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "sticky top-10 hidden h-72 w-[28rem] overflow-hidden rounded-xl bg-white lg:block border border-slate-100 shadow-2xl",
+          "sticky top-10 hidden h-72 w-[28rem] overflow-hidden rounded-xl bg-white dark:bg-slate-800 lg:block border border-slate-100 dark:border-slate-700 shadow-2xl",
           contentClassName,
         )}
         aria-live="polite"

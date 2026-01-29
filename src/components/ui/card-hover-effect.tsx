@@ -57,11 +57,11 @@ export const HoverEffect = ({
             <div className={cn('w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 border border-transparent', item.color)}>
               {item.icon && <item.icon className="w-6 h-6 text-current" />}
             </div>
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-900">
+            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-900 dark:text-slate-100">
               {item.title}
               <ArrowUpRight className="w-5 h-5 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 text-primary" />
             </h3>
-            <p className="text-slate-600 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
               {item.description}
             </p>
 
@@ -91,7 +91,7 @@ export const Card = ({
       whileHover={{ y: -6, scale: 1.02 }}
       transition={{ type: 'spring', stiffness: 210, damping: 22 }}
       className={cn(
-        "rounded-2xl h-full w-full p-6 overflow-hidden bg-white border border-slate-200 shadow-lg hover:shadow-2xl transition-transform duration-300 backdrop-blur-sm relative z-20",
+        "rounded-2xl h-full w-full p-6 overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-transform duration-300 backdrop-blur-sm relative z-20",
         className
       )}
     >
@@ -109,7 +109,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-slate-900 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn("text-slate-900 dark:text-slate-100 font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
   );
@@ -124,7 +124,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-4 text-slate-600 tracking-wide leading-relaxed text-sm",
+        "mt-4 text-slate-600 dark:text-slate-300 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

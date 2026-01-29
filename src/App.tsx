@@ -9,23 +9,26 @@ import MacbookCTA, { HeroScrollDemo } from '@/components/layout/MacbookCTA';
 import { QuoteCTA } from '@/components/layout/QuoteCTA';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
+import { ThemeProvider } from "@/components/theme-provider"
 
 function App() {
   return (
-    <div className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <WhatWeBuild />
-        <Pricing />
-        <AboutAndWhy />
-        <ProcessAndCTA  />
-        <MacbookCTA />
-        <QuoteCTA />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden">
+        <Navbar />
+        <main>
+          <Hero />
+          <WhatWeBuild />
+          <Pricing />
+          <AboutAndWhy />
+          <ProcessAndCTA  />
+          <MacbookCTA />
+          <QuoteCTA />
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </ThemeProvider>
   );
 }
 

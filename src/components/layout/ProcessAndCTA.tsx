@@ -33,7 +33,7 @@ const steps = [
 
 export const ProcessAndCTA = () => {
   return (
-    <section id="process" className="w-full py-24 relative overflow-hidden bg-gradient-to-b from-white to-slate-50">
+    <section id="process" className="w-full py-24 relative overflow-hidden bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
       {/* Decorative full-bleed background */}
       <div aria-hidden className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute -left-40 -top-40 w-[640px] h-[640px] bg-primary/6 rounded-full blur-3xl animate-blob" />
@@ -71,15 +71,15 @@ export const ProcessAndCTA = () => {
                 <div className="flex h-full w-screen items-center justify-center">
                   <div className="flex flex-col items-start justify-center gap-4 p-6 h-full w-full">
                   <div className="w-36 h-36 rounded-2xl flex items-center justify-center  mt-4">
-                      <step.icon className="w-16 h-16 text-green-900" />
+                      <step.icon className="w-16 h-16 text-green-900 dark:text-slate-100" />
                     </div>
                  
                     <div className="mt-3 w-full">
-                      <h4 className="text-sm font-semibold text-slate-800 mb-3">What we cover</h4>
+                      <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-3">What we cover</h4>
                       <ul className="space-y-2">
                         {step.covered?.map((item, idx) => (
-                          <li key={item + idx} className="flex items-center gap-3 text-sm text-slate-700">
-                            <Check className="w-4 h-4 text-primary" />
+                          <li key={item + idx} className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <Check className="w-4 h-4 text-primary dark:text-slate-100" />
                             <span>{item}</span>
                           </li>
                         ))}

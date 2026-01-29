@@ -55,13 +55,13 @@ export const AboutAndWhy = () => {
             className="text-4xl md:text-5xl font-serif font-bold mb-8"
           >
             Why Businesses <br />
-            <span className="text-primary">Trust Brighter</span>
+            <span className="text-primary dark:text-slate-100">Trust Brighter</span>
           </motion.h2>
 
           {/* What we'll cover + Infinite scrolling cards */}
           <div className="mt-6 flex flex-col md:flex-row items-start gap-8">
             <div className="flex-shrink-0 flex items-start gap-4 max-w-md">
-              <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-primary/5 dark:bg-primary/20 text-primary dark:text-slate-100 flex items-center justify-center">
                 <FileText className="w-5 h-5" />
               </div>
               <div>
@@ -69,7 +69,7 @@ export const AboutAndWhy = () => {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   {["Custom, scalable web apps","Fast, iterative delivery","Transparent, predictable pricing","Security-first architecture","Ongoing support & maintenance"].map((point) => (
                     <li key={point} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 mt-0.5 text-primary" />
+                      <Check className="w-4 h-4 mt-0.5 text-primary dark:text-slate-100" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -85,10 +85,10 @@ export const AboutAndWhy = () => {
                   title: "",
                   icon: r.icon,
                   color: [
-                    "bg-rose-50 text-rose-600",
-                    "bg-amber-50 text-amber-600",
-                    "bg-emerald-50 text-emerald-600",
-                    "bg-sky-50 text-sky-600",
+                    "bg-rose-50 text-rose-600 dark:bg-slate-800 dark:text-slate-100",
+                    "bg-amber-50 text-amber-600 dark:bg-slate-800 dark:text-slate-100",
+                    "bg-emerald-50 text-emerald-600 dark:bg-slate-800 dark:text-slate-100",
+                    "bg-sky-50 text-sky-600 dark:bg-slate-800 dark:text-slate-100",
                   ][i % 4],
                 }))}
                 direction="right"
@@ -104,7 +104,7 @@ export const AboutAndWhy = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <div className="flex-1 border-t border-slate-300 dark:border-slate-600" />
-            <span className="text-sm font-bold uppercase tracking-widest text-primary flex items-center gap-2 mx-4">
+            <span className="text-sm font-bold uppercase tracking-widest text-primary dark:text-slate-100 flex items-center gap-2 mx-4">
               <Users className="w-4 h-4" />
               Meet the Team
             </span>

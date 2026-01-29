@@ -11,13 +11,13 @@ export const QuoteCTA = () => {
   return (
     <section id="quote" className="py-12 px-6">
       <div className="mx-auto max-w-7xl">
-        <div className="relative rounded-[1.5rem] bg-gradient-to-r from-white to-slate-50 border border-slate-100 p-8 md:p-12 overflow-hidden text-center shadow-lg">
+        <div className="relative rounded-[1.5rem] bg-gradient-to-r from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 border border-slate-100 dark:border-slate-700 p-8 md:p-12 overflow-hidden text-center shadow-lg">
           <div className="relative z-10 max-w-3xl mx-auto">
          <h3 className="text-3xl md:text-5xl font-serif font-bold mb-6 tracking-tight">
-              Ready to <span className="text-primary">Illuminate</span> Your Business?
+              Ready to <span className="text-primary dark:text-slate-100">Illuminate</span> Your Business?
             </h3>
             
-            <p className="text-lg text-slate-700 mb-8 leading-relaxed">
+            <p className="text-lg text-slate-700 dark:text-slate-300 mb-8 leading-relaxed">
               Let's build something exceptional together. Our team is ready to provide 
               a free consultation and a transparent quote customized to your vision.
             </p>
