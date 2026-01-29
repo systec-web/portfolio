@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Heart, Shield, Zap, Award } from 'lucide-react';
+import { Users, Heart, Shield, Zap, Award, FileText, Check } from 'lucide-react';
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 const testimonials  = [
   {
@@ -57,25 +58,43 @@ export const AboutAndWhy = () => {
             <span className="text-primary">Trust Brighter</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {reasons.map((reason, index) => (
-              <motion.div
-                key={reason.title}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="space-y-3"
-              >
-                <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-primary">
-                  <reason.icon className="w-5 h-5" />
-                </div>
-                <h4 className="font-bold text-lg">{reason.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {reason.description}
-                </p>
-              </motion.div>
-            ))}
+          {/* What we'll cover + Infinite scrolling cards */}
+          <div className="mt-6 flex flex-col md:flex-row items-start gap-8">
+            <div className="flex-shrink-0 flex items-start gap-4 max-w-md">
+              <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary flex items-center justify-center">
+                <FileText className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold">What we'll cover</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  {["Custom, scalable web apps","Fast, iterative delivery","Transparent, predictable pricing","Security-first architecture","Ongoing support & maintenance"].map((point) => (
+                    <li key={point} className="flex items-start gap-2">
+                      <Check className="w-4 h-4 mt-0.5 text-primary" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex-1 w-full">
+              <InfiniteMovingCards
+                items={reasons.map((r, i) => ({
+                  quote: r.description,
+                  name: r.title,
+                  title: "",
+                  icon: r.icon,
+                  color: [
+                    "bg-rose-50 text-rose-600",
+                    "bg-amber-50 text-amber-600",
+                    "bg-emerald-50 text-emerald-600",
+                    "bg-sky-50 text-sky-600",
+                  ][i % 4],
+                }))}
+                direction="right"
+                speed="slow"
+              />
+            </div>
           </div>
         </div>
       </section>

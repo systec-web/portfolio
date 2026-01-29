@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ChevronRight, Sparkles } from 'lucide-react';
 import { BackgroundBeamsWithCollision } from '../ui/background-beams-with-collision';
+import { TypewriterEffectSmooth, TypewriterLoop } from '@/components/ui/typewriter-effect';
 
 export const Hero = () => {
   return (
@@ -25,15 +26,25 @@ export const Hero = () => {
           Crafting Digital Excellence
         </motion.div>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-serif font-black tracking-tight mb-8 leading-[1.1] text-balance"
+          className="text-center mb-8"
         >
-          Custom Software & Websites <br />
-          <span className="text-primary">Built for Your Ambition</span>
-        </motion.h1>
+          <TypewriterLoop
+            pairs={[
+              { top: "Custom Software & Websites", bottom: "Built for Your Ambition", bottomClass: "text-primary" },
+              { top: "Custom Software & Websites", bottom: "Scaled for Growth", bottomClass: "text-amber-500" },
+              { top: "Custom Software & Websites", bottom: "Designed for You", bottomClass: "text-emerald-500" },
+            ]}
+            typingSpeed={60}
+            deletingSpeed={30}
+            pauseAfter={1800}
+            topClassName="text-5xl md:text-7xl font-serif font-black tracking-tight leading-[1.1] text-balance"
+            bottomClassName="text-2xl md:text-3xl font-serif font-bold"
+          />
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

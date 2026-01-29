@@ -125,7 +125,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Brighter Launchpad. All rights reserved.
+        © {new Date().getFullYear()} Systec Web. All rights reserved.
       </div>
     </footer>
   );
