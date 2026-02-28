@@ -34,7 +34,7 @@ export const Hero = () => {
         >
           <TypewriterLoop
             pairs={[
-              { top: "Custom Software & Websites", bottom: "Built for Your Ambition", bottomClass: "text-primary" },
+              { top: "Custom Software & Websites", bottom: "Built for Your Ambition", bottomClass: "text-blue-500" },
               { top: "Custom Software & Websites", bottom: "Scaled for Growth", bottomClass: "text-orange-500" },
               { top: "Custom Software & Websites", bottom: "Designed for You", bottomClass: "text-emerald-500" },
             ]}
